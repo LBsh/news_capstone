@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Problem } from '../../models/problem.model';
+import {Problem} from '../../models/problem.model';
 
 @Component({
   selector: 'app-problem-list',
@@ -13,10 +13,8 @@ export class ProblemListComponent implements OnInit {
   ngOnInit() {
     this.getProblems();
   }
-
-  getProblems(): void{
+  getProblems() : void{
     this.problems = this.dataService.getProblems();
   }
 
 }
-
