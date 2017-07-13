@@ -1,8 +1,16 @@
+import os
+import yaml
 import pyjsonrpc
 import operations
 
-SERVER_HOST = 'localhost'
-SERVER_PORT = 4040
+SERVER_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/server.yaml')
+
+with open(SERVER_CONFIG_FILE, 'r') as serverCfg:
+    server_config = yaml.load(serverCfg)
+
+SERVER_HOST = server_config['news_service']['host']
+SERVER_PORT = server_config['news_service']['port']
+
 
 class RequestHandler(pyjsonrpc.HttpRequestHandler):
     """  Test Method """

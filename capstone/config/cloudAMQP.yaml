@@ -5,4 +5,4 @@ click_log_queue_name: "click-log-task"
 monitor_sleep_time: 10
 fetcher_sleep_time: 5
 deduper_sleep_time: 3
-click_log_sleep_time: 2
+click_log_sleep_time: 5

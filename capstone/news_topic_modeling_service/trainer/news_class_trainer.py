@@ -5,25 +5,29 @@ import pandas as pd
 import pickle
 import shutil
 import tensorflow as tf
-
+import yaml
 from sklearn import metrics
 
-learn = tf.contrib.learn
+NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '../..', 'config/news.yaml')
 
-REMOVE_PREVIOUS_MODEL = True
+with open(NEWS_CONFIG_FILE, 'r') as newsCfg:
+    news_config = yaml.load(newsCfg)
+
+learn = tf.contrib.learn
 
 MODEL_OUTPUT_DIR = '../model/'
 DATA_SET_FILE = '../training_data/labeled_news.csv'
 VARS_FILE = '../model/vars'
 VOCAB_PROCESSOR_SAVE_FILE = '../model/vocab_processor_save_file'
-MAX_DOCUMENT_LENGTH = 200
-N_CLASSES = 8
+MAX_DOCUMENT_LENGTH = news_config['max_doc_length']
+N_CLASSES = news_config['num_of_classes']
+TRAINING_END_INDEX = news_config['training_end_index']
 
-# Training parms
-STEPS = 200
+# Training params
+STEPS = news_config['steps']
 
 def main(unused_argv):
-    if REMOVE_PREVIOUS_MODEL:
+    if news_config['remove_previous_model']:
         # Remove old model
         shutil.rmtree(MODEL_OUTPUT_DIR)
         os.mkdir(MODEL_OUTPUT_DIR)
@@ -31,7 +35,7 @@ def main(unused_argv):
     # Prepare training and testing data
     df = pd.read_csv(DATA_SET_FILE, header=None)
 
-    train_df = df[0:500]
+    train_df = df[0:TRAINING_END_INDEX]
     test_df = df.drop(train_df.index)
 
     # x - news title, y - class

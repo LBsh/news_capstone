@@ -1,6 +1,7 @@
 import './NewsCard.css';
 import Auth from '../Auth/Auth';
 import React from 'react';
+const config = require('../../../config/config.json')
 
 class NewsCard extends React.Component {
 
@@ -10,7 +11,7 @@ class NewsCard extends React.Component {
     }
 
     sendClickLog() {
-        let url = 'http://localhost:3000/news/userId/' + Auth.getEmail()
+        let url = config.web_server.url + '/news/userId/' + Auth.getEmail()
                   + '/newsId/' + this.props.news.digest;
 
         let request = new Request(encodeURI(url), {

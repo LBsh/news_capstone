@@ -1,7 +1,7 @@
 import news_api_client as client
 
 def test_basic():
-    news = client.getNewsFromSources()
+    news = client.getNewsFromSources(sources = ['bbc-news'])
     for new in news:
         if new['source'] == 'bbc-news':
             print new

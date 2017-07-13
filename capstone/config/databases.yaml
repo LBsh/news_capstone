@@ -3,14 +3,20 @@ redis:
   host: 'localhost'
   password: ''
   time_out_in_seconds: 432000
+  # strictly for saving news for user
+  strict_db: 0
 
-mongodb_frontend:
+mongodb:
+  # for frontend user authentication
   url: "mongodb://test:test@ds123312.mlab.com:23312/tapnews"
   jwtSecret: "Random String"
-
-mongodb_backend:
+  # for backend news service
+  host: 'localhost'
+  port: 27017
+  db_name: 'tap_news'
   write_news_table: 'news'
   read_news_table: 'news_labeled'
+  click_log_table: 'click_log'
   preference_model_table: 'user_preference_model'
 
 

@@ -17,9 +17,11 @@
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.6",
     "morgan": "~1.8.1",
+    "node-yaml-config": "^0.0.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.4.2",
-    "validator": "^7.0.0"
+    "validator": "^7.0.0",
+    "yaml-config": "^0.3.0"
   }
 }

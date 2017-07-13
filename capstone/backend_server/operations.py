@@ -4,6 +4,7 @@ import pickle
 import random
 import redis
 import sys
+import yaml
 
 from bson.json_util import dumps
 from datetime import datetime
@@ -15,21 +16,33 @@ import mongodb_client
 import news_rec_service_client
 from cloudAMQP_client import CloudAMQPClient
 
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
+NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/news.yaml')
+DB_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/databases.yaml')
+CLOUDAMQP_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/cloudAMQP.yaml')
 
-NEWS_TABLE_NAME = 'news_labeled'
-CLICK_LOG_TABLE_NAME = 'click_log'
+with open(DB_CONFIG_FILE, 'r') as dbCfg:
+    db_config = yaml.load(dbCfg)
 
-NEWS_LIMIT = 200
-NEWS_PER_PAGE = 10
-USER_NEWS_TIME_OUT_IN_SECONDS = 600
+with open(CLOUDAMQP_CONFIG_FILE, 'r') as amqpCfg:
+    cloudAMQP_config = yaml.load(amqpCfg)
 
-CLOUDAMQP_URL = 'amqp://vjyratxw:oKHc1pFbC581r3UyeMLFrRv79dXaetWo@donkey.rmq.cloudamqp.com/vjyratxw'
-CLICK_LOG_QUEUE_NAME = 'click-log-task'
+with open(NEWS_CONFIG_FILE, 'r') as newsCfg:
+    news_config = yaml.load(newsCfg)
 
-redis_client = redis.StrictRedis(REDIS_HOST, REDIS_PORT, db=0)
-cloudAMQP_client = CloudAMQPClient(CLOUDAMQP_URL, CLICK_LOG_QUEUE_NAME)
+REDIS_HOST = db_config['redis']['host']
+REDIS_PORT = db_config['redis']['port']
+
+NEWS_TABLE_NAME = db_config['mongodb']['read_news_table']
+CLICK_LOG_TABLE_NAME = db_config['mongodb']['click_log_table']
+
+NEWS_LIMIT = news_config['read_news_limit']
+NEWS_PER_PAGE = news_config['news_per_page']
+USER_NEWS_TIME_OUT_IN_SECONDS = news_config['user_timeout_in_seconds']
+
+redis_client = redis.StrictRedis(db_config['redis']['host'], 
+                                 db_config['redis']['port'], 
+                                 db = db_config['redis']['strict_db'])
+cloudAMQP_client = CloudAMQPClient(cloudAMQP_config['url'], cloudAMQP_config['click_log_queue_name'])
 
 def getNewsSummariesForUser(user_id, page_num):
     page_num = int(page_num)

@@ -9,8 +9,8 @@ var auth = require('./routes/auth');
 var index = require('./routes/index');
 var news = require('./routes/news');
 
-var config = require('./config/config.json');
-require('./models/main.js').connect(config.mongoDbUri);
+var config = require('../config/config.json')
+require('./models/main.js').connect(config.mongodb.url);
 
 // view engine setup
 app.set('view engine', 'jade');

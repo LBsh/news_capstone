@@ -1,6 +1,24 @@
-similarity_threshold: 0.9
 num_of_classes: 8
+
+# fetching news
+news_api_key: "908dea5d81f349c2a0f4eca79c5efc87"
+news_api_endpoint: "https://newsapi.org/v1/"
+articles_api: "articles"
+sort_by: 'top'
+
+# news deduping criteria
+similarity_threshold: 0.9
+
+# time decay model
 alpha: 0.1
+
+# loading news for user
+read_news_limit: 200
+news_per_page: 10
+
+# time to temporarily save user news in redis
+user_timeout_in_seconds: 600
+
 classes: 
    ["World",
     "Media & Entertainment",
@@ -10,6 +28,7 @@ classes:
     "Economics",
     "Crime & Accident",
     "Other"]
+
 class_map: 
    {'1':'World',
     '2':'Media & Entertainment',
@@ -19,6 +38,7 @@ class_map:
     '6':"Economics",
     '7':"Crime & Accident",
     '8':"Other"}
+
 news_sources: 
    ['bbc-news',
     'bbc-sport',
@@ -45,8 +65,16 @@ news_sources:
     'usa-today',
     'time']
 
-topic_modeling:
-  update_lag_in_seconds: 120
-  max_doc_length: 500
-  training_end_index: 500
-  n_words: 0
+# for model training
+remove_previous_model: True
+update_lag_in_seconds: 120
+max_doc_length: 100
+training_end_index: 550
+n_words: 0
+steps: 200
+embedding_size: 40
+n_filters: 15
+window_size: 20
+pooling_window: 4
+pooling_stride: 2
+learning_rate: 0.01

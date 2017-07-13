@@ -35,12 +35,12 @@ VOCAB_PROCESSOR_SAVE_FILE = '../model/vocab_processor_save_file'
 
 MODEL_DIR = '../model'
 
-MODEL_UPDATE_LAG_IN_SECONDS = news_config['topic_modeling']['update_lag_in_seconds']
+MODEL_UPDATE_LAG_IN_SECONDS = news_config['update_lag_in_seconds']
 N_CLASSES = news_config['num_of_classes']
 CLASS_MAP = news_config['class_map']
-MAX_DOCUMENT_LENGTH = news_config['topic_modeling']['max_doc_length']
-TRAINING_END_INDEX = news_config['topic_modeling']['training_end_index']
-N_WORDS: news_config['topic_modeling']['n_words']
+MAX_DOCUMENT_LENGTH = news_config['max_doc_length']
+TRAINING_END_INDEX = news_config['training_end_index']
+N_WORDS = news_config['n_words']
 
 vocab_processor = None
 

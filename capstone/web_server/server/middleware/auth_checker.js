@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User= require('mongoose').model('User');
-const config = require('../config/config.json');
+const config = require('../../config/config.json');
 
 module.exports = (req, res, next) => {
     // const headers = req.headers;
@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
     console.log('auth_checker: token: ' + token);
 
     // decode the token using a secret key-phrase
-    return jwt.verify(token, config.jwtSecret, (err, decoded) => {
+    return jwt.verify(token, config.mongodb.jwtSecret, (err, decoded) => {
         if (err) {
             return res.status(401).end();
         }

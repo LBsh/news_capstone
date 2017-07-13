@@ -30,7 +30,7 @@ with open(CLOUDAMQP_CONFIG_FILE, 'r') as amqpCfg:
 with open(NEWS_CONFIG_FILE, 'r') as newsCfg:
     news_config = yaml.load(newsCfg)
 
-NEWS_TABLE_NAME = db_config['mongodb_backend']['write_news_table']
+NEWS_TABLE_NAME = db_config['mongodb']['write_news_table']
 
 dedupe_news_queue_client = CloudAMQPClient(cloudAMQP_config['url'], cloudAMQP_config['dedupe_queue_name'])
 

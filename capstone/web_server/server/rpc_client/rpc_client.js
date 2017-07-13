@@ -1,8 +1,13 @@
 var jayson = require('jayson');
+var yaml = require('js-yaml');
+var fs = require('fs');
+
+// full path has to be used due to discrepancy between path convention
+var server_config = yaml.safeLoad(fs.readFileSync('/home/thu/BitTigerCS503/bittigercs503-1702/capstone/config/server.yaml', 'utf8'));
 
 var client = jayson.client.http({
-    port: 4040,
-    hostname: 'localhost'
+    port: server_config.news_service.port,
+    hostname: server_config.news_service.host
 });
 
 // Test RPC method

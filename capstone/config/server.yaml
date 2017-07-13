@@ -1,7 +1,17 @@
+web:
+  url: "http://localhost:3000"
+
+news_service:
+  host: 'localhost'
+  port: 4040
+  url: 'http://localhost:4040' 
+
 rec:
   host: 'localhost'
   port: 5050
+  url: 'http://localhost:5050' 
 
 topic_modeling:
   host: 'localhost'
   port: 6060
+  url: 'http://localhost:6060'

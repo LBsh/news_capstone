@@ -1,3 +1,5 @@
+# this is a one-time-use file to trim news in mongodb
+
 import os
 import sys
 import json

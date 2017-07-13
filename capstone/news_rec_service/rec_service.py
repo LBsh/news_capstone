@@ -20,7 +20,7 @@ with open(DB_CONFIG_FILE, 'r') as dbCfg:
 with open(SERVER_CONFIG_FILE, 'r') as serverCfg:
     server_config = yaml.load(serverCfg)
 
-PREFERENCE_MODEL_TABLE_NAME = db_config['mongodb_backend']['preference_model_table']
+PREFERENCE_MODEL_TABLE_NAME = db_config['mongodb']['preference_model_table']
 SERVER_HOST = server_config['rec']['host']
 SERVER_PORT = server_config['rec']['port']
 

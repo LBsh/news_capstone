@@ -1,15 +1,21 @@
 import tensorflow as tf
+import yaml
+import os
 
-EMBEDDING_SIZE = 40
-N_FILTERS = 15
-WINDOW_SIZE = 20
+NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '../..', 'config/news.yaml')
+
+with open(NEWS_CONFIG_FILE, 'r') as newsCfg:
+    news_config = yaml.load(newsCfg)
+
+EMBEDDING_SIZE = news_config['embedding_size']
+N_FILTERS = news_config['n_filters']
+WINDOW_SIZE = news_config['window_size']
 FILTER_SHAPE1 = [WINDOW_SIZE, EMBEDDING_SIZE]
 FILTER_SHAPE2 = [WINDOW_SIZE, N_FILTERS]
-POOLING_WINDOW = 4
-POOLING_STRIDE = 2
+POOLING_WINDOW = news_config['pooling_window']
+POOLING_STRIDE = news_config['pooling_stride']
 
-LEARNING_RATE = 0.1
-
+LEARNING_RATE = news_config['learning_rate']
 
 def generate_cnn_model(n_classes, n_words):
     """2 layer ConvNet to predict from sequence of words to a class."""

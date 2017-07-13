@@ -1,20 +1,20 @@
 import requests
+import yaml
+import os
 from json import loads
 
-NEWS_API_KEY = "908dea5d81f349c2a0f4eca79c5efc87"
-NEWS_API_ENDPOINT = "https://newsapi.org/v1/"
-ARTICLES_API = "articles"
+NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/news.yaml')
 
-DEFAULT_SOURCES = ['cnn', 'bbc-news']
-SORT_BY_TOP = 'top'
+with open(NEWS_CONFIG_FILE, 'r') as newsCfg:
+    news_config = yaml.load(newsCfg)
 
-def buildUrl(end_point = NEWS_API_ENDPOINT, api_name = ARTICLES_API):
+def buildUrl(end_point = news_config['news_api_endpoint'], api_name = news_config['articles_api']):
     return end_point + api_name
 
-def getNewsFromSources(sources = [DEFAULT_SOURCES], sortBy = SORT_BY_TOP):
+def getNewsFromSources(sources, sortBy = news_config['sort_by']):
     articles = []
     for source in sources:
-        payload = {'apiKey': NEWS_API_KEY,
+        payload = {'apiKey': news_config['news_api_key'],
                    'source': source,
                    'sortBy': sortBy}
         response = requests.get(buildUrl(), params = payload)

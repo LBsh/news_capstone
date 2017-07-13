@@ -41,8 +41,8 @@ INITIAL_P = 1.0 / NUM_OF_CLASSES
 ALPHA = news_config['alpha']
 NEWS_CLASSES = news_config['classes']
 
-PREFERENCE_MODEL_TABLE_NAME = db_config['mongodb_backend']['preference_model_table']
-NEWS_TABLE_NAME = db_config['mongodb_backend']['read_news_table']
+PREFERENCE_MODEL_TABLE_NAME = db_config['mongodb']['preference_model_table']
+NEWS_TABLE_NAME = db_config['mongodb']['read_news_table']
 
 cloudAMQP_client = CloudAMQPClient(cloudAMQP_config['url'], cloudAMQP_config['click_log_queue_name'])
 
