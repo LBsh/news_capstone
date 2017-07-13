@@ -1,0 +1,17 @@
+redis:
+  port: 6379
+  host: 'localhost'
+  password: ''
+  time_out_in_seconds: 432000
+
+mongodb_frontend:
+  url: "mongodb://test:test@ds123312.mlab.com:23312/tapnews"
+  jwtSecret: "Random String"
+
+mongodb_backend:
+  write_news_table: 'news'
+  read_news_table: 'news_labeled'
+  preference_model_table: 'user_preference_model'
+
+
+

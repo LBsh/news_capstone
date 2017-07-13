@@ -1,0 +1,8 @@
+url: "amqp://vjyratxw:oKHc1pFbC581r3UyeMLFrRv79dXaetWo@donkey.rmq.cloudamqp.com/vjyratxw"
+scrape_queue_name: "news-scrape-task"
+dedupe_queue_name: "news-dedupe-task"
+click_log_queue_name: "click-log-task" 
+monitor_sleep_time: 10
+fetcher_sleep_time: 5
+deduper_sleep_time: 3
+click_log_sleep_time: 2

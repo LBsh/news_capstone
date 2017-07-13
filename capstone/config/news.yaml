@@ -1,0 +1,52 @@
+similarity_threshold: 0.9
+num_of_classes: 8
+alpha: 0.1
+classes: 
+   ["World",
+    "Media & Entertainment",
+    "Politics & Government",
+    "Sports",
+    "Technology",
+    "Economics",
+    "Crime & Accident",
+    "Other"]
+class_map: 
+   {'1':'World',
+    '2':'Media & Entertainment',
+    '3':"Politics & Government",
+    '4':"Sports",
+    '5':"Technology",
+    '6':"Economics",
+    '7':"Crime & Accident",
+    '8':"Other"}
+news_sources: 
+   ['bbc-news',
+    'bbc-sport',
+    'bloomberg',
+    'business-insider',
+    'buzzfeed',
+    'cnn',
+    'daily-mail',
+    'entertainment-weekly',
+    'espn',
+    'fortune',
+    'google-news',
+    'hacker-news',
+    'ign',
+    'mtv-news',
+    'new-scientist',
+    'newsweek',
+    'new-york-magazine',
+    'reuters',
+    'techcrunch',
+    'the-new-york-times',
+    'the-wall-street-journal',
+    'the-washington-post',
+    'usa-today',
+    'time']
+
+topic_modeling:
+  update_lag_in_seconds: 120
+  max_doc_length: 500
+  training_end_index: 500
+  n_words: 0

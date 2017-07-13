@@ -1,0 +1,7 @@
+rec:
+  host: 'localhost'
+  port: 5050
+
+topic_modeling:
+  host: 'localhost'
+  port: 6060

@@ -1,0 +1,10 @@
+.nav-wrapper {
+  background-color: transparent;
+}
+
+.brand-logo {
+  margin-top: 7px;
+  height: auto;
+  width: auto;
+  max-height: 50px;
+}

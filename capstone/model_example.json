@@ -1,0 +1,16 @@
+{
+    "_id": {"$oid":"59609dc391ba312fb30b3847"},
+    "userId":"test_user",
+    "preference":{
+        "Media \u0026 Entertainment":0.09000000000000001,
+        "Politics \u0026 Government":0.19,
+        "Traffic \u0026 Roads":0.09000000000000001,
+        "Economics":0.09000000000000001,
+        "Other":0.09000000000000001,
+        "Sports":0.09000000000000001,
+        "Weather":0.09000000000000001,
+        "World":0.09000000000000001,
+        "Crime":0.09000000000000001,
+        "Technology":0.09000000000000001
+        }
+}
