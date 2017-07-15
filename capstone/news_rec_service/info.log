@@ -1,0 +1,58 @@
+2017-07-15 01:40:28,102 - root - [INFO]: Starting HTTP server on localhost:50502017-07-15 09:56:27,529 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 09:56:51,029 - root - [WARNING]: User does not have a preference model.
+2017-07-15 10:04:36,288 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 10:11:19,023 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 10:13:48,442 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 10:13:48,624 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 10:13:48,711 - root - [INFO]: New user... Creating preference model for user: admin@admin.com
+2017-07-15 10:13:48,713 - root - [INFO]: Updating preference model for user: admin@admin.com
+2017-07-15 10:13:48,729 - root - [ERROR]: True
+None
+2017-07-15 10:13:48,732 - root - [ERROR]: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 91, in handle_msg
+    logging.error('class' not in news, exc_info = True)
+TypeError: argument of type 'NoneType' is not iterable
+2017-07-15 10:13:53,769 - root - [INFO]: New user... Creating preference model for user: admin@admin.com
+2017-07-15 10:13:53,772 - root - [INFO]: Updating preference model for user: admin@admin.com
+2017-07-15 10:13:53,779 - root - [ERROR]: True
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 91, in handle_msg
+    logging.error('class' not in news, exc_info = True)
+TypeError: argument of type 'NoneType' is not iterable
+2017-07-15 10:13:53,782 - root - [ERROR]: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 91, in handle_msg
+    logging.error('class' not in news, exc_info = True)
+TypeError: argument of type 'NoneType' is not iterable
+2017-07-15 10:13:58,822 - root - [INFO]: Updating preference model for user: 11@11.com
+2017-07-15 10:13:58,843 - root - [ERROR]: False
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 91, in handle_msg
+    logging.error('class' not in news, exc_info = True)
+TypeError: argument of type 'NoneType' is not iterable
+2017-07-15 10:13:58,852 - root - [ERROR]: True
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 91, in handle_msg
+    logging.error('class' not in news, exc_info = True)
+TypeError: argument of type 'NoneType' is not iterable
+2017-07-15 10:13:58,855 - root - [ERROR]: 'class'
+Traceback (most recent call last):
+  File "click_log_processor.py", line 116, in run
+    handle_msg(msg)
+  File "click_log_processor.py", line 92, in handle_msg
+    logging.error(news['class'] not in NEWS_CLASSES, exc_info = True)
+KeyError: 'class'
+2017-07-15 10:16:12,333 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 10:25:16,409 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 10:30:22,105 - root - [INFO]: Starting HTTP server on localhost:5050

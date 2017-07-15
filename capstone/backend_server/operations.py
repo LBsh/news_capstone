@@ -5,6 +5,7 @@ import random
 import redis
 import sys
 import yaml
+import logging.config
 
 from bson.json_util import dumps
 from datetime import datetime
@@ -19,7 +20,12 @@ from cloudAMQP_client import CloudAMQPClient
 NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/news.yaml')
 DB_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/databases.yaml')
 CLOUDAMQP_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/cloudAMQP.yaml')
+LOGGING_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/logging.yaml')
 
+with open(LOGGING_CONFIG_FILE, 'r') as loggingCfg:
+    logging_config = yaml.load(loggingCfg)
+    logging.config.dictConfig(logging_config)
+    
 with open(DB_CONFIG_FILE, 'r') as dbCfg:
     db_config = yaml.load(dbCfg)
 
@@ -84,7 +90,14 @@ def getNewsSummariesForUser(user_id, page_num):
     for news in sliced_news:
         if news['publishedAt'].date() == datetime.today().date:
             news['time'] = 'today'
-        if news['class'] == topPreference:
+        if (news is None
+            or 'class' not in news
+            or news['class'] not in NEWS_CLASSES):
+            logging.error(news is None, exc_info = True)
+            logging.error('class' not in news, exc_info = True)
+            logging.error(news['class'] not in NEWS_CLASSES, exc_info = True)
+            
+        else:
             news['reason'] = 'recommend'
         
     return json.loads(dumps(sliced_news))

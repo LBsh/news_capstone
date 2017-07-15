@@ -16,6 +16,7 @@ would bias towards more recent results more.
 import os
 import sys
 import yaml
+import logging.config
 
 # import common package in parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
@@ -26,6 +27,11 @@ from cloudAMQP_client import CloudAMQPClient
 DB_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/databases.yaml')
 NEWS_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/news.yaml')
 CLOUDAMQP_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/cloudAMQP.yaml')
+LOGGING_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/logging.yaml')
+
+with open(LOGGING_CONFIG_FILE, 'r') as loggingCfg:
+    logging_config = yaml.load(loggingCfg)
+    logging.config.dictConfig(logging_config)
 
 with open(DB_CONFIG_FILE, 'r') as dbCfg:
     db_config = yaml.load(dbCfg)
@@ -48,13 +54,13 @@ cloudAMQP_client = CloudAMQPClient(cloudAMQP_config['url'], cloudAMQP_config['cl
 
 def handle_msg(msg):
     if msg is None or not isinstance(msg, dict):
-        print 'Invalid message!!'
+        logging.error('Invalid click log message')
         return
 
     if ('userId' not in msg
         or 'newsId' not in msg
         or 'timestamp' not in msg):
-        print 'Message does not contain necessary info'
+        logging.error('Click log message does not contain necessary info')
         return
 
     userId = msg['userId']
@@ -66,7 +72,7 @@ def handle_msg(msg):
 
     # If model does not exist, create a new one
     if model is None:
-        print 'New user... Creating preference model for user: %s' % userId
+        logging.info('New user... Creating preference model for user: %s' % userId)
         new_model = {'userId': userId}
         preference = {}
         for i in NEWS_CLASSES:
@@ -74,16 +80,16 @@ def handle_msg(msg):
         new_model['preference'] = preference
         model = new_model
         
-    print 'Updating preference model for user: %s' % userId
+    logging.info('Updating preference model for user: %s' % userId)
 
     # Update the model using time decay method
     news = db[NEWS_TABLE_NAME].find_one({'digest': newsId})
     if (news is None
         or 'class' not in news
         or news['class'] not in NEWS_CLASSES):
-        print news is None
-        print 'class' not in news
-        print news['class'] not in NEWS_CLASSES
+        logging.error(news is None, exc_info = True)
+        logging.error('class' not in news, exc_info = True)
+        logging.error(news['class'] not in NEWS_CLASSES, exc_info = True)
         return
 
     click_class = news['class']
@@ -109,7 +115,7 @@ def run():
                 try:
                     handle_msg(msg)
                 except Exception as e:
-                    print e
+                    logging.error(e, exc_info = True)
                     pass
             # Remove if becoming a bottleneck
             cloudAMQP_client.sleep(cloudAMQP_config['click_log_sleep_time'])

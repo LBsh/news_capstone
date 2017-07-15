@@ -3,6 +3,7 @@ import os
 import operator
 import sys
 import yaml
+import logging.config
 
 # import file from common package
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
@@ -13,12 +14,17 @@ import mongodb_client
 
 DB_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/databases.yaml')
 SERVER_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/server.yaml')
+LOGGING_CONFIG_FILE = os.path.join(os.path.dirname(__file__), '..', 'config/logging.yaml')
 
 with open(DB_CONFIG_FILE, 'r') as dbCfg:
     db_config = yaml.load(dbCfg)
 
 with open(SERVER_CONFIG_FILE, 'r') as serverCfg:
     server_config = yaml.load(serverCfg)
+
+with open(LOGGING_CONFIG_FILE, 'r') as loggingCfg:
+    logging_config = yaml.load(loggingCfg)
+    logging.config.dictConfig(logging_config)
 
 PREFERENCE_MODEL_TABLE_NAME = db_config['mongodb']['preference_model_table']
 SERVER_HOST = server_config['rec']['host']
@@ -37,6 +43,7 @@ class RequestHandler(pyjsonrpc.HttpRequestHandler):
         model = db[PREFERENCE_MODEL_TABLE_NAME].find_one({'userId': user_id})
         
         if model is None:
+            logging.warning("User does not have a preference model.")
             return []
 
         sorted_tuples = sorted(model['preference'].items(), key = operator.itemgetter(1), reverse = True)
@@ -44,6 +51,7 @@ class RequestHandler(pyjsonrpc.HttpRequestHandler):
         sorted_value = [x[1] for x in sorted_tuples]
 
         if isclose(float(sorted_value[0]), float(sorted_value[-1])):
+            logging.warning("User does not have a preference model.")
             return []
 
         return sorted_list
@@ -54,6 +62,6 @@ http_server = pyjsonrpc.ThreadingHttpServer(
     RequestHandlerClass = RequestHandler
 )
 
-print "Starting HTTP server on %s:%d" % (SERVER_HOST, SERVER_PORT)
+logging.info("Starting HTTP server on %s:%d" % (SERVER_HOST, SERVER_PORT))
 
 http_server.serve_forever()

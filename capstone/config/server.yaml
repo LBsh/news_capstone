@@ -1,6 +1,3 @@
-web:
-  url: "http://localhost:3000"
-
 news_service:
   host: 'localhost'
   port: 4040

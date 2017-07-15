@@ -14,7 +14,7 @@ class NewsCard extends React.Component {
         let url = config.web_server.url + '/news/userId/' + Auth.getEmail()
                   + '/newsId/' + this.props.news.digest;
 
-        let request = new Request(encodeURI(url), {
+        let request = new Request(encodeURIComponent(url), {
             method: 'POST',
             headers: {
                 'Authorization': 'bearer ' + Auth.getToken()
