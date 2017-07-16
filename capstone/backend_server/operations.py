@@ -117,6 +117,7 @@ def getNewsHistoryForUser(user_id):
 
     return json.loads(dumps(history_news))
 
+
 def logNewsClickForUser(user_id, news_id):
     message = {'userId': user_id, 'newsId': news_id, 'timestamp': datetime.utcnow()}
 
