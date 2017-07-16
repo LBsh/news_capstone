@@ -6,7 +6,6 @@ import logo from './logo.png';
 import './App.css';
 
 import NewsPanel from '../NewsPanel/NewsPanel';
-import History from '../History/History';
 
 class App extends Component {
   render() {

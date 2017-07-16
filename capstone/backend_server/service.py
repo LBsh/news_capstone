@@ -18,11 +18,22 @@ class RequestHandler(pyjsonrpc.HttpRequestHandler):
     def add(self, a, b):
         print "add is called with %d and %d" % (a, b)
         return a + b
+
+    @pyjsonrpc.rpcmethod
+    def mul(self, a):
+        print "mul is called with %d" % a
+        return a * a
     
     """ Get news summaries for a user """
     @pyjsonrpc.rpcmethod
     def getNewsSummariesForUser(self, user_id, page_num):
         return operations.getNewsSummariesForUser(user_id, page_num)
+
+    """ Get news history for a user """
+    @pyjsonrpc.rpcmethod
+    def getNewsHistoryForUser(self, user_id):
+        print 'service.py'
+        return operations.getNewsHistoryForUser(user_id)
 
     """ Log news click for a user """
     @pyjsonrpc.rpcmethod

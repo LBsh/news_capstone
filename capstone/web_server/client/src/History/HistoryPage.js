@@ -3,36 +3,22 @@ import Auth from '../Auth/Auth';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 
-import _ from 'lodash';
-
-class History extends React.Component{
+class HistoryPage extends React.Component{
 
     constructor() {
         super();
         this.state = {news:null};
-        this.handleScroll = this.handleScroll.bind(this);
     }
 
     componentDidMount() {
-        this.loadHistoryForUser();  
-        this.loadHistoryForUser = _.debounce(this.loadMoreNews, 1000);      
-        window.addEventListener('scroll', this.handleScroll);
+        this.loadHistoryForUser();
     }
-
-    handleScroll() {
-        let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        if ((window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
-            console.log('Loading more history...');
-            this.loadMoreNews();
-        }
-    }
-
 
     loadHistoryForUser() {
 
-        let url = 'http://localhost:3000/news/history';
+        let url = 'http://localhost:3000/news/history/' + Auth.getEmail();
         
-        let request = new Request(url, {
+        let request = new Request(encodeURI(url), {
             method: 'GET',
             headers: {
                 'Authorization': 'bearer ' + Auth.getToken()
@@ -48,6 +34,7 @@ class History extends React.Component{
                         this.state.news.concat(historyNews) : historyNews
                 });
             });
+
     }
 
     renderNews() {
@@ -81,7 +68,7 @@ class History extends React.Component{
         } else {
             return (
                 <div>
-                    Loading history...
+                    {Auth.getUsername}. You currently have no browse history. Start reading news now!
                 </div>
             )
         }
@@ -90,4 +77,4 @@ class History extends React.Component{
 
 }
 
-export default History;
+export default HistoryPage;

@@ -2,6 +2,7 @@ import Base from './Base/Base';
 import App from './App/App';
 import LoginPage from './Login/LoginPage';
 import SignupPage from './Signup/SignupPage';
+import HistoryPage from './History/HistoryPage';
 import Auth from './Auth/Auth';
 
 const routes = {
@@ -32,6 +33,10 @@ const routes = {
                 Auth.deauthenticateUser();
                 replace('/');
             }
+        },
+        {
+            path: '/history',
+            component: HistoryPage
         }
     ]
 };

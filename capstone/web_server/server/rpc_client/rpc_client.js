@@ -19,10 +19,24 @@ function add(a, b, callback) {
     });
 }
 
+function mul(a, callback) {
+    client.request('mul', [a], function(err, error, response) {
+        if(err) throw err;
+        console.log(response);
+        callback(response);
+    });
+}
+
 function getNewsSummariesForUser(user_id, page_num, callback) {
     client.request('getNewsSummariesForUser', [user_id, page_num], function(err, error, response) {
         if (err) throw err;
-        console.log(response);
+        callback(response);
+    })
+}
+
+function getNewsHistoryForUser(user_id, callback) {
+    client.request('getNewsHistoryForUser', [user_id], function(err, error, response) {
+        if (err) throw err;
         callback(response);
     })
 }
@@ -30,12 +44,13 @@ function getNewsSummariesForUser(user_id, page_num, callback) {
 function logNewsClickForUser(user_id, news_id) {
     client.request('logNewsClickForUser', [user_id, news_id], function(err, error, response) {
         if (err) throw err;
-        console.log('from rpc_client: ' + response);
     })
 }
 
 module.exports = {
     add: add,
+    mul: mul,
     getNewsSummariesForUser: getNewsSummariesForUser,
-    logNewsClickForUser: logNewsClickForUser
+    logNewsClickForUser: logNewsClickForUser,
+    getNewsHistoryForUser: getNewsHistoryForUser
 };

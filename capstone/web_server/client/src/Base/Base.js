@@ -12,10 +12,11 @@ const Base = ({children}) => (
      <nav className="nav-bar indigo lighten-1">
        <div className="nav-wrapper">
          <a href='/'><img className='brand-logo center' src={logo} alt='logo' /></a>
-         <ul id="nav-mobile" className="right">
+         <ul id="nav-mobile" className="right hide-on-med-and-down">
            {Auth.isUserAuthenticated() ?
              (<div>           
                 <li>{Auth.getUsername()}</li>
+                <li><Link to = "/history">History</Link></li>
                 <li><Link to="/logout">Log out</Link></li>
               </div>)
               :

@@ -15,6 +15,16 @@ router.get('/userId/:userId/pageNum/:pageNum', function(req, res, next) {
 
 });
 
+// Get news history for user
+router.get('/history/:userId', function(req, res, next) {
+    console.log('Retrieving history for user...');
+    user_id = req.params['userId'];
+    console.log(user_id);
+    rpc_client.getNewsHistoryForUser(user_id, function(response) {
+        res.json(response);
+    });
+});
+
 // post click log
 router.post('/userId/:userId/newsId/:newsId', function(req, res, next) {
     console.log('Recording user click...');

@@ -9,6 +9,7 @@ import logging.config
 
 from bson.json_util import dumps
 from datetime import datetime
+from operator import itemgetter
 
 # import package in a parent directory
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
@@ -89,7 +90,7 @@ def getNewsSummariesForUser(user_id, page_num):
         topPreference = preference_list[0]
         preference_order = { key: i for i, key in enumerate(preference_list)}
         sliced_news = sorted(sliced_news, key = lambda d: preference_order[d['class']])
-        print "sorting complete."
+        print 'Sorting complete.'
 
     for news in sliced_news:
         if news['publishedAt'].date() == datetime.today().date:
@@ -104,6 +105,17 @@ def getNewsSummariesForUser(user_id, page_num):
         
     return json.loads(dumps(sliced_news))
 
+
+def getNewsHistoryForUser(user_id):
+    print 'getting news history from mongodb...'
+    history_news = []
+
+    db = mongodb_client.get_db()
+    click_log = map(itemgetter('newsId'),list(db[CLICK_LOG_TABLE_NAME].find({'userId': user_id}, {'newsId':1})))
+    print click_log
+    history_news = list(db[NEWS_TABLE_NAME].find({'digest': {'$in': click_log}}))
+
+    return json.loads(dumps(history_news))
 
 def logNewsClickForUser(user_id, news_id):
     message = {'userId': user_id, 'newsId': news_id, 'timestamp': datetime.utcnow()}

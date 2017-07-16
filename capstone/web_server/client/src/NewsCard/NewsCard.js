@@ -4,16 +4,22 @@ import React from 'react';
 
 class NewsCard extends React.Component {
 
-    redirectToUrl(url) {
+    constructor() {
+    super();
+    this.redirectToUrl = this.redirectToUrl.bind(this);
+    }
+
+    redirectToUrl(event) {
+        event.preventDefault();
         this.sendClickLog();
-        window.open(url, '_blank');
+        window.open(this.props.news.url, '_blank');
     }
 
     sendClickLog() {
-        let url = 'http://localhost:3000/news/userId/' + Auth.getEmail()
-                  + '/newsId/' + this.props.news.digest;
+        let url = 'http://localhost:3000/news/userId/' + encodeURIComponent(Auth.getEmail())
+                  + '/newsId/' + encodeURIComponent(this.props.news.digest);
 
-        let request = new Request(encodeURI(url), {
+        let request = new Request(url, {
             method: 'POST',
             headers: {
                 'Authorization': 'bearer ' + Auth.getToken()
@@ -27,7 +33,7 @@ class NewsCard extends React.Component {
 
     render() {
         return (
-            <div className="news-container" onClick={() => this.redirectToUrl(this.props.news.url)}>
+            <div className="news-container" onClick={this.redirectToUrl}>
                 <div className='row'>
                 <div className='col s4 fill'>
                     <img src={this.props.news.urlToImage} alt='news'/>

@@ -279,3 +279,205 @@ None
 2017-07-16 09:18:28,654 - root - [INFO]: Starting HTTP server on localhost:5050
 2017-07-16 09:18:34,136 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
 2017-07-16 09:18:34,328 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 11:21:16,320 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 11:21:16,525 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 11:21:21,839 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 11:44:58,784 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 11:44:58,958 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 11:45:04,807 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 12:33:38,403 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 12:33:38,621 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 12:33:44,903 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 12:43:08,386 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 12:43:08,596 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 12:43:14,175 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 12:51:24,175 - pika.adapters.base_connection - [ERROR]: Fatal Socket Error: error(32, 'Broken pipe')
+2017-07-16 12:51:24,179 - pika.adapters.base_connection - [WARNING]: Socket closed when connection was open
+2017-07-16 12:51:24,179 - pika.connection - [WARNING]: Disconnected from RabbitMQ at donkey.rmq.cloudamqp.com:5672 (0): Not specified
+2017-07-16 12:51:24,183 - root - [ERROR]: JsonRpcError(-32603): Internal JSON-RPC error. -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 34, in logNewsClickForUser
+    return operations.logNewsClickForUser(user_id, news_id)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 126, in logNewsClickForUser
+    cloudAMQP_client.sendMessage(message)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/../common/cloudAMQP_client.py", line 16, in sendMessage
+    self.channel.basic_publish(exchange='', routing_key=self.queue_name, body=json.dumps(message))
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1978, in basic_publish
+    mandatory, immediate)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 2065, in publish
+    self._flush_output()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 1174, in _flush_output
+    *waiters)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+    raise exceptions.ConnectionClosed()
+ConnectionClosed
+
+2017-07-16 12:52:37,773 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 12:52:37,957 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 12:53:26,838 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 12:53:27,018 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 12:55:07,472 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 12:55:07,657 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 12:55:09,110 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 12:55:26,739 - root - [ERROR]: JsonRpcError(-32603): Cannot encode object: <pymongo.cursor.Cursor object at 0x7f5bd2b46b90> -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 29, in getNewsHistoryForUser
+    return operations.getNewsHistoryForUser(user_id)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 118, in getNewsHistoryForUser
+    return json.loads(dumps(history_news))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 274, in dumps
+    return json.dumps(_json_convert(obj, json_options), *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in _json_convert
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in <genexpr>
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1114, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1036, in _refresh
+    self.__collation))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 873, in __send_message
+    **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 905, in _send_message_with_response
+    exhaust)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 916, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/server.py", line 124, in send_message_with_response
+    set_slave_okay, sock_info.is_mongos, use_find_cmd)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 291, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <pymongo.cursor.Cursor object at 0x7f5bd2b46b90>
+
+2017-07-16 12:59:26,967 - root - [ERROR]: JsonRpcError(-32603): Cannot encode object: <pymongo.cursor.Cursor object at 0x7f5bd1c41ed0> -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 29, in getNewsHistoryForUser
+    def getNewsHistoryForUser(self, user_id):
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 118, in getNewsHistoryForUser
+    return json.loads(dumps(history_news))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 274, in dumps
+    return json.dumps(_json_convert(obj, json_options), *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in _json_convert
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in <genexpr>
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1114, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1036, in _refresh
+    self.__collation))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 873, in __send_message
+    **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 905, in _send_message_with_response
+    exhaust)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 916, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/server.py", line 124, in send_message_with_response
+    set_slave_okay, sock_info.is_mongos, use_find_cmd)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 291, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <pymongo.cursor.Cursor object at 0x7f5bd1c41ed0>
+
+2017-07-16 13:01:02,485 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:01:02,713 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:01:14,084 - root - [ERROR]: JsonRpcError(-32603): Cannot encode object: <pymongo.cursor.Cursor object at 0x7ff5a4ca5450> -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 31, in getNewsHistoryForUser
+    return operations.getNewsHistoryForUser(user_id)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 118, in getNewsHistoryForUser
+    return json.loads(dumps(history_news))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 274, in dumps
+    return json.dumps(_json_convert(obj, json_options), *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in _json_convert
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in <genexpr>
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1114, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1036, in _refresh
+    self.__collation))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 873, in __send_message
+    **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 905, in _send_message_with_response
+    exhaust)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 916, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/server.py", line 124, in send_message_with_response
+    set_slave_okay, sock_info.is_mongos, use_find_cmd)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 291, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <pymongo.cursor.Cursor object at 0x7ff5a4ca5450>
+
+2017-07-16 13:08:21,276 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:08:21,454 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:12:31,418 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:12:31,595 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:13:21,243 - root - [ERROR]: JsonRpcError(-32602): Invalid method parameter(s). -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+TypeError: add() takes exactly 3 arguments (1 given)
+
+2017-07-16 13:15:22,756 - root - [ERROR]: JsonRpcError(-32602): Invalid method parameter(s). -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+TypeError: add() takes exactly 3 arguments (1 given)
+
+2017-07-16 13:17:39,577 - root - [WARNING]: User does not have a preference model.
+2017-07-16 13:19:36,266 - root - [ERROR]: JsonRpcError(-32603): Cannot encode object: <pymongo.cursor.Cursor object at 0x7f1250899610> -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 31, in getNewsHistoryForUser
+    return operations.getNewsHistoryForUser(user_id)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 118, in getNewsHistoryForUser
+    return json.loads(dumps(history_news))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 274, in dumps
+    return json.dumps(_json_convert(obj, json_options), *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in _json_convert
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/bson/json_util.py", line 307, in <genexpr>
+    return list((_json_convert(v, json_options) for v in obj))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1114, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 1036, in _refresh
+    self.__collation))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 873, in __send_message
+    **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 905, in _send_message_with_response
+    exhaust)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 916, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/server.py", line 124, in send_message_with_response
+    set_slave_okay, sock_info.is_mongos, use_find_cmd)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 291, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <pymongo.cursor.Cursor object at 0x7f1250899610>
+
+2017-07-16 13:24:44,370 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:24:44,549 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:31:12,063 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:31:12,253 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:39:22,818 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:39:22,991 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:40:22,818 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:40:22,986 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:41:40,028 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:41:40,204 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:53:04,578 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:53:04,809 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 13:53:14,677 - root - [ERROR]: JsonRpcError(-32603): global name 'itemgetter' is not defined -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 36, in getNewsHistoryForUser
+    return operations.getNewsHistoryForUser(user_id)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 113, in getNewsHistoryForUser
+    click_log = map(itemgetter('newsId'),list(db[CLICK_LOG_TABLE_NAME].find({'userId': user_id}, {'newsId':1})))
+NameError: global name 'itemgetter' is not defined
+
+2017-07-16 13:53:52,777 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 13:53:52,963 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 14:08:51,793 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 14:08:51,976 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-16 14:08:59,518 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 14:34:30,393 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 14:34:30,579 - pika.adapters.blocking_connection - [INFO]: Created channel=1
