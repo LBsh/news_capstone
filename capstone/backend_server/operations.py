@@ -41,6 +41,7 @@ REDIS_PORT = db_config['redis']['port']
 NEWS_TABLE_NAME = db_config['mongodb']['read_news_table']
 CLICK_LOG_TABLE_NAME = db_config['mongodb']['click_log_table']
 
+NEWS_CLASSES = news_config['classes']
 NEWS_LIMIT = news_config['read_news_limit']
 NEWS_PER_PAGE = news_config['news_per_page']
 USER_NEWS_TIME_OUT_IN_SECONDS = news_config['user_timeout_in_seconds']
@@ -86,18 +87,19 @@ def getNewsSummariesForUser(user_id, page_num):
     if preference_list is not None and len(preference_list) > 0:
         print 'User has preference. Identifying top preference...'
         topPreference = preference_list[0]
+        preference_order = { key: i for i, key in enumerate(preference_list)}
+        sliced_news = sorted(sliced_news, key = lambda d: preference_order[d['class']])
+        print "sorting complete."
 
     for news in sliced_news:
         if news['publishedAt'].date() == datetime.today().date:
             news['time'] = 'today'
         if (news is None
-            or 'class' not in news
-            or news['class'] not in NEWS_CLASSES):
+            or 'class' not in news):
             logging.error(news is None, exc_info = True)
             logging.error('class' not in news, exc_info = True)
-            logging.error(news['class'] not in NEWS_CLASSES, exc_info = True)
             
-        else:
+        elif news['class'] == topPreference:
             news['reason'] = 'recommend'
         
     return json.loads(dumps(sliced_news))

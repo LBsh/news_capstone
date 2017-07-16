@@ -4,6 +4,8 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import Auth from '../Auth/Auth';
 import logo from './logo.png';
+import NewsPanel from '../NewsPanel/NewsPanel'
+
 
 const Base = ({children}) => (
     <div>
@@ -12,7 +14,7 @@ const Base = ({children}) => (
          <a href='/'><img className='brand-logo center' src={logo} alt='logo' /></a>
          <ul id="nav-mobile" className="right">
            {Auth.isUserAuthenticated() ?
-             (<div>
+             (<div>           
                 <li>{Auth.getUsername()}</li>
                 <li><Link to="/logout">Log out</Link></li>
               </div>)

@@ -12,6 +12,6 @@ mongodb:
   port: 27017
   db_name: 'tap_news'
   write_news_table: 'news'
-  read_news_table: 'news_labeled'
+  read_news_table: 'news'
   click_log_table: 'click_log'
   preference_model_table: 'user_preference_model'

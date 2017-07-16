@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken');
 const User= require('mongoose').model('User');
 const config = require('../../config/config.json');
+const winston = require('winston');
 
 module.exports = (req, res, next) => {
     // const headers = req.headers;
     // console.log('auth_checker: req: ' + JSON.stringify({headers}));
+    var info = winston.loggers.get('info');
 
     if(!req.headers.authorization) {
         console.log('auth checker: user is not authorized');
@@ -14,8 +16,8 @@ module.exports = (req, res, next) => {
     // get the last part from a authorization header string like "bearer token-value"
     const token = req.headers.authorization.split(' ')[1];
 
-
-    console.log('auth_checker: token: ' + token);
+    
+    info.info('auth_checker: token: ' + token);
 
     // decode the token using a secret key-phrase
     return jwt.verify(token, config.mongodb.jwtSecret, (err, decoded) => {

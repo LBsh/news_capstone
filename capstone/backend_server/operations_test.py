@@ -11,15 +11,15 @@ import mongodb_client
 # start Redis and MongoDB before running following tests
 
 def test_getNewsSummariesForUser_basic():
-    news = operations.getNewsSummariesForUser('test', 1)
+    news = operations.getNewsSummariesForUser('admin@admin.com', 1)
     print news
     assert len(news) != 0
     print 'test_getNewsSummariesForUser_basic passed!'
 
 
 def test_getNewsSummariesForUser_pagination():
-    news_page_1 = operations.getNewsSummariesForUser('test', 1)
-    news_page_2 = operations.getNewsSummariesForUser('test', 2)
+    news_page_1 = operations.getNewsSummariesForUser('admin@admin.com', 1)
+    news_page_2 = operations.getNewsSummariesForUser('admin@admin.com', 2)
 
     assert len(news_page_1) > 0
     assert len(news_page_2) > 0

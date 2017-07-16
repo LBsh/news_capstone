@@ -12,6 +12,7 @@ class NewsPanel extends React.Component{
         this.state = {news:null, pageNum:1, loadedAll: false};
         this.loadMoreNews = _.debounce(this.loadMoreNews, 1000);
         this.handleScroll = this.handleScroll.bind(this);
+        this.loadHistoryForUser = this.loadHistoryForUser.bind(this);
     }
 
     componentDidMount() {
@@ -56,6 +57,29 @@ class NewsPanel extends React.Component{
                     pageNum: this.state.pageNum + 1
                 });
             });
+    }
+
+    loadHistoryForUser() {
+    //     let url = 'http://localhost:3000/news/history/userId' + Auth.getEmail()
+        
+    //     let request = new Request(encodeURIComponent(url), {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': 'bearer ' + Auth.getToken()
+    //         },
+    //         cache: false
+    //     });
+
+    // fetch(request)
+    //     .then((res) => res.json())
+    //     .then((historyNews) => {
+    //         this.setState({
+    //             news: this.state.news ?
+    //                 this.state.news.concat(historyNews) : historyNews
+    //         });
+    //     });
+        this.setState({news: null});
+        return "History";
     }
 
     renderNews() {

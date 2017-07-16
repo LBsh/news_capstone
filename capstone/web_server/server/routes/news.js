@@ -25,4 +25,5 @@ router.post('/userId/:userId/newsId/:newsId', function(req, res, next) {
     res.status(200);
 })
 
+
 module.exports = router;

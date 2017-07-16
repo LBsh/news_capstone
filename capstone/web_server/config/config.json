@@ -1,7 +1,4 @@
 {
-    "web_server": {
-        "url": "http://localhost:3000"
-    },
     "mongodb": {
         "url": "mongodb://test:test@ds123312.mlab.com:23312/tapnews",
         "jwtSecret": "Random String"

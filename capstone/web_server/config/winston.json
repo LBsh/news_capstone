@@ -1,0 +1,26 @@
+{
+    "info": {
+        "console": {
+            "level": "silly",
+            "colorize": true,
+            "label": "INFO"
+        },
+        "file": {
+            "filename": "../log/info.log",
+            "colorize": true,
+            "label": "INFO"
+        }
+    },
+    "error": {
+        "console": {
+            "level": "error",
+            "colorize": true,
+            "label": "ERROR"
+        },
+        "file": {
+            "filename": "../log/error.log",
+            "colorize": true,
+            "label": "ERROR"
+        }
+    }
+}

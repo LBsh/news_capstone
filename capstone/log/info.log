@@ -1,0 +1,281 @@
+2017-07-15 11:12:36,256 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 11:12:36,438 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 11:21:12,816 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 11:21:13,019 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 12:40:29,184 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 12:40:29,365 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 12:40:32,709 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 12:40:51,281 - root - [ERROR]: JsonRpcError(-32603): global name 'NEWS_CLASSES' is not defined -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 25, in getNewsSummariesForUser
+    return operations.getNewsSummariesForUser(user_id, page_num)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 95, in getNewsSummariesForUser
+    or news['class'] not in NEWS_CLASSES):
+NameError: global name 'NEWS_CLASSES' is not defined
+
+2017-07-15 13:02:20,030 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 13:02:20,208 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 13:02:23,619 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 13:07:57,876 - root - [ERROR]: JsonRpcError(-32603): global name 'NEWS_CLASSES' is not defined -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 25, in getNewsSummariesForUser
+    return operations.getNewsSummariesForUser(user_id, page_num)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 95, in getNewsSummariesForUser
+    or news['class'] not in NEWS_CLASSES):
+NameError: global name 'NEWS_CLASSES' is not defined
+
+2017-07-15 13:10:05,505 - root - [ERROR]: JsonRpcError(-32603): global name 'NEWS_CLASSES' is not defined -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 25, in getNewsSummariesForUser
+    return operations.getNewsSummariesForUser(user_id, page_num)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 95, in getNewsSummariesForUser
+    or news['class'] not in NEWS_CLASSES):
+NameError: global name 'NEWS_CLASSES' is not defined
+
+2017-07-15 13:14:56,433 - root - [ERROR]: JsonRpcError(-32603): global name 'NEWS_CLASSES' is not defined -- Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyjsonrpc/rpclib.py", line 114, in call
+    result = rpc_function(*positional_params, **named_params)
+  File "service.py", line 25, in getNewsSummariesForUser
+    return operations.getNewsSummariesForUser(user_id, page_num)
+  File "/home/thu/BitTigerCS503/bittigercs503-1702/capstone/backend_server/operations.py", line 95, in getNewsSummariesForUser
+    or 'class' not in news
+NameError: global name 'NEWS_CLASSES' is not defined
+
+2017-07-15 13:16:23,004 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 13:16:23,184 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 13:16:26,925 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 13:16:33,551 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,553 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,554 - root - [ERROR]: True
+None
+2017-07-15 13:16:33,555 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,556 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,558 - root - [ERROR]: True
+None
+2017-07-15 13:16:33,559 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,562 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,563 - root - [ERROR]: True
+None
+2017-07-15 13:16:33,568 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,568 - root - [ERROR]: False
+None
+2017-07-15 13:16:33,569 - root - [ERROR]: True
+None
+2017-07-15 13:17:18,066 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,069 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,075 - root - [ERROR]: True
+None
+2017-07-15 13:17:18,077 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,077 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,078 - root - [ERROR]: True
+None
+2017-07-15 13:17:18,079 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,080 - root - [ERROR]: False
+None
+2017-07-15 13:17:18,081 - root - [ERROR]: True
+None
+2017-07-15 13:24:59,219 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,223 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,227 - root - [ERROR]: True
+None
+2017-07-15 13:24:59,229 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,234 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,243 - root - [ERROR]: True
+None
+2017-07-15 13:24:59,253 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,254 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,256 - root - [ERROR]: True
+None
+2017-07-15 13:24:59,259 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,271 - root - [ERROR]: False
+None
+2017-07-15 13:24:59,274 - root - [ERROR]: True
+None
+2017-07-15 13:26:51,315 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,317 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,318 - root - [ERROR]: True
+None
+2017-07-15 13:26:51,319 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,320 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,322 - root - [ERROR]: True
+None
+2017-07-15 13:26:51,327 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,332 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,333 - root - [ERROR]: True
+None
+2017-07-15 13:26:51,340 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,341 - root - [ERROR]: False
+None
+2017-07-15 13:26:51,342 - root - [ERROR]: True
+None
+2017-07-15 13:34:12,811 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,813 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,815 - root - [ERROR]: True
+None
+2017-07-15 13:34:12,816 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,816 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,817 - root - [ERROR]: True
+None
+2017-07-15 13:34:12,823 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,828 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,828 - root - [ERROR]: True
+None
+2017-07-15 13:34:12,829 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,830 - root - [ERROR]: False
+None
+2017-07-15 13:34:12,831 - root - [ERROR]: True
+None
+2017-07-15 13:42:32,663 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,665 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,666 - root - [ERROR]: True
+None
+2017-07-15 13:42:32,667 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,668 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,669 - root - [ERROR]: True
+None
+2017-07-15 13:42:32,676 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,679 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,686 - root - [ERROR]: True
+None
+2017-07-15 13:42:32,696 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,700 - root - [ERROR]: False
+None
+2017-07-15 13:42:32,701 - root - [ERROR]: True
+None
+2017-07-15 13:46:27,010 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,013 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,037 - root - [ERROR]: True
+None
+2017-07-15 13:46:27,040 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,044 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,045 - root - [ERROR]: True
+None
+2017-07-15 13:46:27,047 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,049 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,052 - root - [ERROR]: True
+None
+2017-07-15 13:46:27,053 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,055 - root - [ERROR]: False
+None
+2017-07-15 13:46:27,056 - root - [ERROR]: True
+None
+2017-07-15 13:46:57,821 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,829 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,845 - root - [ERROR]: True
+None
+2017-07-15 13:46:57,848 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,850 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,850 - root - [ERROR]: True
+None
+2017-07-15 13:46:57,852 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,853 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,854 - root - [ERROR]: True
+None
+2017-07-15 13:46:57,856 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,866 - root - [ERROR]: False
+None
+2017-07-15 13:46:57,872 - root - [ERROR]: True
+None
+2017-07-15 13:53:07,552 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,554 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,556 - root - [ERROR]: True
+None
+2017-07-15 13:53:07,560 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,561 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,562 - root - [ERROR]: True
+None
+2017-07-15 13:53:07,564 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,567 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,570 - root - [ERROR]: True
+None
+2017-07-15 13:53:07,582 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,590 - root - [ERROR]: False
+None
+2017-07-15 13:53:07,592 - root - [ERROR]: True
+None
+2017-07-15 15:33:50,036 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 15:33:50,219 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 15:33:55,384 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-15 16:19:35,169 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:19:35,360 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:19:35,679 - root - [WARNING]: User does not have a preference model.
+2017-07-15 16:21:41,637 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:21:41,816 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:22:29,606 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:22:29,796 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:27:58,565 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:27:58,741 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:30:50,352 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:30:50,542 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:32:53,699 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-15 16:32:53,881 - pika.adapters.blocking_connection - [INFO]: Created channel=1
+2017-07-15 16:32:54,207 - root - [WARNING]: User does not have a preference model.
+2017-07-15 16:32:54,349 - root - [WARNING]: User does not have a preference model.
+2017-07-15 16:32:54,444 - root - [WARNING]: User does not have a preference model.
+2017-07-16 09:18:28,654 - root - [INFO]: Starting HTTP server on localhost:5050
+2017-07-16 09:18:34,136 - pika.adapters.base_connection - [INFO]: Connecting to 54.193.63.247:5672
+2017-07-16 09:18:34,328 - pika.adapters.blocking_connection - [INFO]: Created channel=1

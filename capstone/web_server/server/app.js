@@ -12,6 +12,13 @@ var news = require('./routes/news');
 var config = require('../config/config.json')
 require('./models/main.js').connect(config.mongodb.url);
 
+var winston = require('winston');
+var winston_conf = require('../config/winston.json');
+
+// configure the logger for 'info'
+winston.loggers.add('info', winston_conf.info);
+winston.loggers.add('error', winston_conf.error);
+
 // view engine setup
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, '../client/build/'));

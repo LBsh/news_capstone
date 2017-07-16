@@ -1,0 +1,31 @@
+{"_id":{"$oid":"5962b4a88463da23ed56616e"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 22:56:40.176454","userId":"11@11.com"}
+{"_id":{"$oid":"5962b4d28463da23ed56616f"},"newsId":"MdUxhol0LIfiQLZjllNgfw==\n","timestamp":"2017-07-09 22:57:22.037515","userId":"11@11.com"}
+{"_id":{"$oid":"5962b8e88463da27234a5c45"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:14:48.865395","userId":"11@11.com"}
+{"_id":{"$oid":"5962b9608463da27234a5c46"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:16:48.838893","userId":"11@11.com"}
+{"_id":{"$oid":"5962bad88463da28987a901a"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:23:04.482393","userId":"11@11.com"}
+{"_id":{"$oid":"5962bb508463da28987a901b"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:25:04.762241","userId":"11@11.com"}
+{"_id":{"$oid":"5962bcc88463da28987a901c"},"newsId":"6rieUY3NLzzaf8nSVq0BrA==\n","timestamp":"2017-07-09 23:31:20.297394","userId":"11@11.com"}
+{"_id":{"$oid":"5962bf568463da28987a901d"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:42:14.570934","userId":"11@11.com"}
+{"_id":{"$oid":"5962bf748463da2ba0e92261"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:42:44.600710","userId":"11@11.com"}
+{"_id":{"$oid":"5962bfec8463da2ba0e92262"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:44:44.593916","userId":"11@11.com"}
+{"_id":{"$oid":"5962c0938463da2c88110d2e"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:47:31.025626","userId":"11@11.com"}
+{"_id":{"$oid":"5962c10b8463da2c88110d2f"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":"2017-07-09 23:49:31.021902","userId":"11@11.com"}
+{"_id":{"$oid":"5962c2708463da2dec5ba730"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-09T23:55:28.745Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962c2e88463da2dec5ba731"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-09T23:57:28.756Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962c3608463da2dec5ba732"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-09T23:59:28.760Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962c4278463da2ece7e7e63"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T00:02:47.946Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962c49f8463da2ece7e7e64"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T00:04:47.946Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d1258463da39290632c1"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T00:58:13.513Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d19d8463da39290632c2"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T01:00:13.514Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d22e8463da39290632c3"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T01:02:38.782Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d2a68463da39290632c4"},"newsId":"isd2deaUF3KAkzM4QpN4Yw==\n","timestamp":{"$date":"2017-07-10T01:04:38.866Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d2bc8463da39290632c5"},"newsId":"O7zLbF1Xclw70cJIgy4Byg==\n","timestamp":{"$date":"2017-07-10T01:05:00.485Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d3308463da39290632c6"},"newsId":"MdUxhol0LIfiQLZjllNgfw==\n","timestamp":{"$date":"2017-07-10T01:06:56.336Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d3388463da39290632c7"},"newsId":"HOak77P6Qt6E4us2jVrBAA==\n","timestamp":{"$date":"2017-07-10T01:07:04.381Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"5962d35d8463da39290632c8"},"newsId":"O7zLbF1Xclw70cJIgy4Byg==\n","timestamp":{"$date":"2017-07-10T01:07:41.743Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"596733e98463da3ad50db26a"},"newsId":"O7zLbF1Xclw70cJIgy4Byg==\n","timestamp":{"$date":"2017-07-13T08:48:41.980Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"596738818463da3e2430c163"},"newsId":"O7zLbF1Xclw70cJIgy4Byg==\n","timestamp":{"$date":"2017-07-13T09:08:17.057Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"596974358463da0d9cb6e8cf"},"newsId":"6rieUY3NLzzaf8nSVq0BrA==\n","timestamp":{"$date":"2017-07-15T01:47:33.872Z"},"userId":"admin@admin.com"}
+{"_id":{"$oid":"596974ad8463da0d9cb6e8d0"},"newsId":"6rieUY3NLzzaf8nSVq0BrA==\n","timestamp":{"$date":"2017-07-15T01:49:33.867Z"},"userId":"admin@admin.com"}
+{"_id":{"$oid":"596a4cf48463da360dd6c497"},"newsId":"RgUCvILiGeQOLh6yBGiqeg==\n","timestamp":{"$date":"2017-07-15T17:12:20.832Z"},"userId":"11@11.com"}
+{"_id":{"$oid":"596a4d6c8463da360dd6c498"},"newsId":"RgUCvILiGeQOLh6yBGiqeg==\n","timestamp":{"$date":"2017-07-15T17:14:20.886Z"},"userId":"11@11.com"}
